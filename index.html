@@ -6,13 +6,13 @@
   <title>Designed By Committee</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
     /* Base reset & layout */
     body {
       margin: 0;
       padding: 0;
-      background: white;
+      background: #ffffff;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -21,15 +21,62 @@
     }
 
     /* Main tagline */
-    p {
+    .main-text {
+      position: relative;
+      display: inline-block;
       font-family: 'Roboto', sans-serif;
-      font-size: 24px;
-      color: black;
+      font-size: 1.5rem;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      color: #111111;
+      text-transform: uppercase;
+      margin: 0;
+      animation:
+        fadeSlideIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) both,
+        breathe 6s ease-in-out 1.3s infinite;
+    }
+
+    /* Underline reveal on hover */
+    .main-text::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: #111111;
+      transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .main-text:hover::after {
+      width: 100%;
+    }
+
+    /* Entrance: fade up into place */
+    @keyframes fadeSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Ongoing: very gentle letter-spacing breathe */
+    @keyframes breathe {
+      0%, 100% {
+        letter-spacing: 0.15em;
+      }
+      50% {
+        letter-spacing: 0.22em;
+      }
     }
   </style>
 </head>
 <body>
-  <p>This website is designed by committee</p>
+  <p class="main-text">This website is designed by committee</p>
   <script>
     // behaviour will be added by future evolutions
   </script>
