@@ -1,12 +1,14 @@
-# Designed By Committee — Generation 2
+# Designed By Committee — Generation 3
 
-Last suggestion: "add subtle animation to the main text, make it modern and minimalist"
+Last suggestion: "add an ASCII cat that's animated that runs across the screen"
 Trigger: vote_threshold
-Evolved: 2026-05-06T03:08:47.142Z
+Evolved: 2026-05-06T07:57:25.232Z
 
 ## Repository Files
 - _evo.txt
-- index.html — Main HTML entry point with inline CSS animations and JS placeholder
+- index.html — Main HTML entry point with inline CSS/JS — includes ASCII cat running animation
+- scripts.js — External script (mirrors inline script for reference; index.html uses inline)
+- styles.css — External stylesheet (mirrors inline styles for reference; index.html uses inline)
 
 ## Notes
 - _project.md is auto-generated — do not write to it
